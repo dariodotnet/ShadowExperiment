@@ -1,5 +1,5 @@
 # Shadow experiment
-Jugando con SkiaSharp para generar sombras
+Jugando con SkiaSharp para generar sombras [Referencia](https://forums.xamarin.com/discussion/117146/shadows-on-skiasharp-shape) [Gracias](https://forums.xamarin.com/profile/SYLENDRABABUJR)
 
 Aveces necesitamos crear sombras para alguno de nuestro elementos en pantalla en Xamarin Forms y claro, lo de siempre, iOS funciona a las mil maravillas pero luego toca pelearse con Android y para los más nostálgicos como yo, aplicaciones de la tienda de Windows, UWP.
 
