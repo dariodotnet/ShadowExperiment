@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="ShadowExperiment.MainPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:shadowExperiment="clr-namespace:ShadowExperiment;assembly=ShadowExperiment"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Name="Page"
+             mc:Ignorable="d">
+
+    <Grid BackgroundColor="White"
+          ColumnDefinitions="1*, 1*, 1*"
+          RowDefinitions="2*, 1*, 1*"
+          RowSpacing="0">
+
+        <Grid Grid.ColumnSpan="3" BackgroundColor="DarkSeaGreen" />
+
+        <skia:SKCanvasView x:Name="CanvasView"
+                           Grid.Row="1"
+                           Grid.RowSpan="2"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="3"
+                           PaintSurface="SKCanvasView_OnPaintSurface" />
+
+        <StackLayout Grid.ColumnSpan="3"
+                     Spacing="0"
+                     VerticalOptions="Center">
+
+            <Label Padding="16,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Content margin: " />
+                        <Span Text="{Binding Source={x:Reference SliderShadowMargin}, Path=Value}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Slider x:Name="SliderShadowMargin"
+                    Maximum="80"
+                    Minimum="0"
+                    ValueChanged="Slider_OnValueChanged"
+                    Value="20" />
+
+            <Label Padding="16,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="ShadowX: " />
+                        <Span Text="{Binding Source={x:Reference SliderShadowX}, Path=Value}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Slider x:Name="SliderShadowX"
+                    Maximum="100"
+                    Minimum="-100"
+                    ValueChanged="Slider_OnValueChanged" />
+
+            <Label Padding="16,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="ShadowY: " />
+                        <Span Text="{Binding Source={x:Reference SliderShadowY}, Path=Value}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Slider x:Name="SliderShadowY"
+                    Maximum="100"
+                    Minimum="-100"
+                    ValueChanged="Slider_OnValueChanged" />
+
+            <Label Padding="16,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="SigmaX: " />
+                        <Span Text="{Binding Source={x:Reference SliderSigmaX}, Path=Value}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Slider x:Name="SliderSigmaX"
+                    Maximum="50"
+                    Minimum="0"
+                    ValueChanged="Slider_OnValueChanged"
+                    Value="5" />
+
+            <Label Padding="16,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="SigmaY: " />
+                        <Span Text="{Binding Source={x:Reference SliderSigmaY}, Path=Value}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Slider x:Name="SliderSigmaY"
+                    Maximum="50"
+                    Minimum="0"
+                    ValueChanged="Slider_OnValueChanged"
+                    Value="5" />
+
+            <Label Padding="16,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Blur: " />
+                        <Span Text="{Binding Source={x:Reference SliderBlurX}, Path=Value}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Slider x:Name="SliderBlurX"
+                    Maximum="50"
+                    Minimum="0"
+                    ValueChanged="Slider_OnValueChanged" />
+
+            <Label Padding="16,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Blur: " />
+                        <Span Text="{Binding Source={x:Reference SliderBlurY}, Path=Value}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Slider x:Name="SliderBlurY"
+                    Maximum="50"
+                    Minimum="0"
+                    ValueChanged="Slider_OnValueChanged" />
+        </StackLayout>
+
+    </Grid>
+
+
+</ContentPage>
