@@ -4,28 +4,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:shadowExperiment="clr-namespace:ShadowExperiment;assembly=ShadowExperiment"
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Name="Page"
              mc:Ignorable="d">
 
     <Grid BackgroundColor="White"
-          ColumnDefinitions="1*, 1*, 1*"
-          RowDefinitions="2*, 1*, 1*"
+          RowDefinitions="1*, 1*"
           RowSpacing="0">
 
-        <Grid Grid.ColumnSpan="3" BackgroundColor="DarkSeaGreen" />
-
-        <skia:SKCanvasView x:Name="CanvasView"
-                           Grid.Row="1"
-                           Grid.RowSpan="2"
-                           Grid.Column="0"
-                           Grid.ColumnSpan="3"
-                           PaintSurface="SKCanvasView_OnPaintSurface" />
-
-        <StackLayout Grid.ColumnSpan="3"
-                     Spacing="0"
-                     VerticalOptions="Center">
+        <StackLayout Padding="0,16,0,0"
+                     BackgroundColor="DarkSeaGreen"
+                     Spacing="0">
 
             <Label Padding="16,0">
                 <Label.FormattedText>
@@ -122,7 +111,9 @@
                     ValueChanged="Slider_OnValueChanged" />
         </StackLayout>
 
+        <skia:SKCanvasView x:Name="CanvasView"
+                           Grid.Row="1"
+                           PaintSurface="SKCanvasView_OnPaintSurface" />
+
     </Grid>
-
-
 </ContentPage>
